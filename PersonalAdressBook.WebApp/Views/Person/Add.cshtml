@@ -1,0 +1,76 @@
+﻿@model Person
+
+
+    <div class="registration-form">
+        <form asp-controller="Person" asp-action="Add" method="post">
+            <div class="form-icon">
+				<span><img src="~/address-book.png"  width="50" height="60"></i></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Name" placeholder="Kişi İsmi" type="text" class="form-control item">
+            </div>
+            <div class="form-group">
+                <input asp-for="LastName" type="text" placeholder="Kişi Soyismi" class="form-control item">
+            </div>
+            <div class="form-group">
+                <input asp-for="Phone" placeholder="Telefon Numarası" type="text" class="form-control item">
+            </div>
+            <div class="form-group">
+                <textarea rows="1" cols="15" asp-for="Address" class="form-control item" placeholder="Adress giriniz..">
+Adresi giriniz...</textarea>
+            </div>
+            <div class="form-group">
+                <input type="email" asp-for="Email" class="form-control item" placeholder="Email">
+            </div>
+            <div class="form-group">
+			<button type="submit" class="btn btn-warning create-account"><i class="bi bi-save"></i>Kaydet</button>
+            </div>
+        </form>
+    </div>
+    
+
+
+@*
+@*
+
+<style>
+	#cevre {
+		background-color: yellow;
+	}
+<div class="container pt-5" id ="cevre">
+	<div class="row">
+		<div class="col-md-8">
+			<form asp-controller="Person" asp-action="Add" method="post">
+				<div class="form-group">
+					<label asp-for="Name" class="form-label">Kişi İsmi *</label>
+					<input asp-for="Name" type="text" class="form-control">
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="LastName" class="form-label">Kişi Soyismi * </label>
+					<input asp-for="LastName" type="text" class="form-control">
+					<span asp-validation-for="LastName" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Phone" class="form-label">Telefon Numarası * </label>
+					<input asp-for="Phone" type="text" class="form-control">
+					<span asp-validation-for="Phone" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Address" class="form-label">Kişi Adres * </label>
+					<textarea rows="2" cols="40" asp-for="Address" class="form-control" form="usrform">
+Adresi giriniz...</textarea>
+				</div>
+				<div class="form-group">
+					<label asp-for="Email">Email adresi *</label>
+					<input type="email" asp-for="Email" class="form-control">
+				</div>
+				
+				<div class="form-group pt-3">
+					<button type="submit" class="btn btn-warning"><i class="bi bi-save"></i>Kaydet</button>
+					<a href="/Person/GetAll" class="btn btn-primary"><i class="bi bi-list"></i>Listele</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div> *@

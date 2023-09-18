@@ -1,0 +1,133 @@
+﻿@model IEnumerable<Person>
+
+
+<style>
+	html,
+	body {
+		height: 100%;
+	}
+
+	body {
+		margin: 0;
+		
+		font-family: sans-serif;
+		font-weight: 100;
+	}
+
+	.container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	table {
+		width: 800px;
+		border-collapse: collapse;
+		overflow: hidden;
+		box-shadow: 0 0 10px rgba(0,0,0,0.9);
+	}
+
+	th,
+	td {
+		padding: 15px;
+		background-color: #7681bcbf;
+		color: #4d0a0a;
+		border-radius: 10px
+	}
+
+	th {
+		text-align: left;
+	}
+
+	thead {
+		th
+
+	{
+		background-color: #55608f;
+	}
+
+	}
+
+	tbody {
+		tr
+
+	{
+		&:hover
+
+	{
+		background-color: rgba(255,255,255,0.3);
+	}
+
+	}
+
+	td {
+		position: relative;
+		&:hover
+
+	{
+		&:before
+
+	{
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -9999px;
+		bottom: -9999px;
+		background-color: rgba(255,255,255,0.2);
+		z-index: -1;
+	}
+
+	}
+	}
+	}</style>
+
+
+		<!--Title-->
+		<h1 class="flex items-center font-sans font-bold break-normal text-indigo-500 px-2 py-8 text-xl md:text-2xl">
+			Adres Defteri
+		</h1>
+
+
+		
+
+
+			<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+				<thead>
+					<tr>
+						<th data-priority="1">İsim</th>
+						<th data-priority="2">Soy İsim</th>
+						<th data-priority="3">Telefon</th>
+						<th data-priority="4">Adres</th>
+						<th data-priority="5">Email</th>
+						<th> </th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>@item.Name</td>
+							<td>@item.LastName</td>
+							<td>@item.Phone</td>
+							<td>@item.Address</td>
+							<td>@item.Email</td>
+							<td>
+								<a class="btn btn-success" href="/Person/Update?id=@item.Id"><i class="bi bi-pen"></i></a>
+								<a class="btn btn-danger"
+								   onclick="return window.confirm('Are you sure?')"
+								   href="/Person/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
+							</td>
+						</tr>
+
+					}
+				</tbody>
+
+			</table>
+
+
+		
+
+
+
